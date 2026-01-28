@@ -85,6 +85,19 @@
       font-style: italic;
     }
 
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centra los cuadros que sobren */
+  gap: 30px;
+}
+
+.service-card {
+  flex: 1 1 300px; /* Crecen y se encogen, mínimo 300px */
+  max-width: 380px;
+}
+
+    
     .btn-main {
       padding: 20px 50px;
       background: var(--primary);
@@ -272,6 +285,12 @@
       section { padding: 80px 20px; }
       .wa-link { width: 60px; height: 60px; bottom: 25px; right: 25px; }
     }
+
+    @media (max-width: 768px) {
+  header {
+    background-attachment: scroll !important;
+  }
+}
   </style>
 </head>
 <body>
@@ -326,7 +345,7 @@
     </div>
     <div class="price-image-container">
         <!-- ASEGÚRATE DE QUE TU IMAGEN SE LLAME 'precios.jpg' EN LA CARPETA 'assets' -->
-        <img src="assets/precios.jpg" alt="Lista de Precios Derma Belle Spa" class="price-image">
+        <img src="assets/lista_precios_page.png" alt="Lista de Precios Derma Belle Spa" class="price-image">
     </div>
   </section>
 
@@ -344,7 +363,7 @@
       <div class="step">
         <div class="step-number">02</div>
         <h4 style="color: var(--primary);">Preparamos</h4>
-        <p>Llevamos camilla, música y todo el equipo profesional.</p>
+        <p>Llevamos todo el equipo profesional.</p>
       </div>
       <div class="step">
         <div class="step-number">03</div>
