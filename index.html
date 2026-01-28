@@ -170,23 +170,21 @@
       margin: 0 0 20px;
     }
 
-    /* SECCIÓN PRECIOS (NUEVO) */
-    .price-list {
-      max-width: 700px;
-      margin: auto;
+    /* SECCIÓN PRECIOS IMAGEN (NUEVO ESTILO) */
+    .price-image-container {
+      text-align: center;
+      padding: 20px;
       background: var(--white);
-      padding: 40px;
       box-shadow: var(--shadow);
+      max-width: 800px; /* Limita el ancho para que no se estire demasiado en pantallas grandes */
+      margin: auto;
     }
-    .price-item {
-      display: flex;
-      justify-content: space-between;
-      padding: 15px 0;
-      border-bottom: 1px dashed #ddd;
+    .price-image {
+      max-width: 100%; /* Se ajusta al contenedor */
+      height: auto;
+      display: block;
+      margin: auto; /* Centra la imagen dentro del contenedor */
     }
-    .price-item:last-child { border-bottom: none; }
-    .price-item h4 { margin: 0; font-weight: 500; color: var(--text); }
-    .price-item .price { font-weight: 600; color: var(--accent); }
 
 
     /* SECCIÓN CÓMO FUNCIONA */
@@ -290,32 +288,14 @@
     </div>
   </section>
 
-  <!-- LISTA DE PRECIOS DETALLADA (NUEVO) -->
+  <!-- LISTA DE PRECIOS CON IMAGEN (RESPONSIVA) -->
   <section id="precios">
     <div class="section-title">
       <h2>Lista de Precios a Domicilio</h2>
     </div>
-    <div class="price-list">
-      <div class="price-item">
-        <h4>Limpieza facial profunda (con Microdermoabrasión)</h4>
-        <span class="price">$20.000</span>
-      </div>
-      <div class="price-item">
-        <h4>Masaje reductivo y reafirmante</h4>
-        <span class="price">Desde $30.000</span>
-      </div>
-      <div class="price-item">
-        <h4>Masaje de relajación (zona, completo etc.)</h4>
-        <span class="price">Desde $20.000</span>
-      </div>
-      <div class="price-item">
-        <h4>Masaje descontracturante</h4>
-        <span class="price">$30.000</span>
-      </div>
-      <div class="price-item">
-        <h4>Drenajes linfáticos</h4>
-        <span class="price">$25.000</span>
-      </div>
+    <div class="price-image-container">
+        <!-- ASEGÚRATE DE QUE TU IMAGEN SE LLAME 'precios.jpg' EN LA CARPETA 'assets' -->
+        <img src="assets/lista_precios_page.png" alt="Lista de Precios DermaBelle Spa" class="price-image">
     </div>
   </section>
 
@@ -352,6 +332,7 @@
     </div>
     <p style="font-size: 0.8rem; opacity: 0.5;">© 2024 DERMA BELLE SPA. DESIGNED FOR WELLNESS.</p>
   </footer>
+
 
   <!-- BOTÓN DE WHATSAPP CON FORMATO WA.ME -->
   <a href="https://wa.me/56972189306?text=Hola%20%F0%9F%98%8A%0AQuisiera%20agendar%20una%20hora%20en%20*DermaBelle%20Spa*.%0AGracias!!"
