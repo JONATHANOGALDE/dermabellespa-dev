@@ -5,6 +5,7 @@
   <title>Derma Belle Spa | Bienestar a Domicilio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Tipografías elegantes -->
   <link href="https://fonts.googleapis.com" rel="stylesheet">
 
   <style>
@@ -39,6 +40,7 @@
       font-weight: 600;
     }
 
+    /* HERO SECTION */
     header {
       min-height: 90vh;
       display: flex;
@@ -47,12 +49,14 @@
       justify-content: center;
       text-align: center;
       padding: 40px 20px;
-      background: linear-gradient(rgba(253, 250, 248, 0.8), rgba(253, 250, 248, 0.8)), 
+      background: linear-gradient(rgba(253, 250, 248, 0.85), rgba(253, 250, 248, 0.85)), 
                   url('https://images.unsplash.com') center/cover;
     }
 
     header img {
       max-width: 280px;
+      width: 100%;
+      height: auto;
       margin-bottom: 20px;
     }
 
@@ -80,8 +84,9 @@
       letter-spacing: 2px;
       font-size: 0.8rem;
       text-transform: uppercase;
-      transition: 0.3s;
+      transition: all 0.3s ease;
       border: 1px solid var(--primary);
+      display: inline-block;
     }
 
     .btn-main:hover {
@@ -89,6 +94,7 @@
       color: var(--primary);
     }
 
+    /* SECCIONES */
     section {
       padding: 80px 20px;
       max-width: 1100px;
@@ -107,7 +113,7 @@
       margin-bottom: 10px;
     }
 
-    /* GRID SERVICIOS */
+    /* SERVICIOS */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -119,38 +125,44 @@
       padding: 40px;
       border: 1px solid #eee;
       transition: 0.4s;
+      text-align: center;
     }
 
     .service-card:hover {
       border-color: var(--accent);
+      transform: translateY(-5px);
       box-shadow: 0 15px 30px rgba(0,0,0,0.05);
     }
 
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
     /* TESTIMONIOS */
-    .testimonials {
+    .testimonials-section {
       background: #f4eee9;
+      padding: 80px 20px;
+    }
+
+    .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 40px;
-      padding: 60px 40px;
+      max-width: 1100px;
+      margin: auto;
     }
 
     .testi-item {
+      background: var(--white);
+      padding: 40px;
       font-style: italic;
       position: relative;
+      border-left: 4px solid var(--accent);
     }
 
-    .testi-item::before {
-      content: '"';
-      font-family: 'Playfair Display';
-      font-size: 4rem;
-      color: var(--accent);
-      opacity: 0.3;
-      position: absolute;
-      top: -20px;
-      left: -10px;
-    }
-
+    /* FOOTER */
     footer {
       background: #2d2421;
       color: #d1c1bc;
@@ -158,85 +170,107 @@
       text-align: center;
     }
 
+    footer h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    /* WHATSAPP FLOTANTE CORREGIDO */
     .wa-link {
       position: fixed;
       bottom: 30px;
       right: 30px;
       background: #25D366;
       color: white;
-      width: 60px;
-      height: 60px;
+      width: 65px;
+      height: 65px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-      z-index: 1000;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+      z-index: 9999;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .wa-link:hover {
+      transform: scale(1.15) rotate(5deg);
     }
 
     @media (max-width: 768px) {
+      h1 { font-size: 2.2rem; }
       header { min-height: 70vh; }
-      .service-card { padding: 30px; }
+      .wa-link { width: 55px; height: 55px; bottom: 20px; right: 20px; }
     }
   </style>
 </head>
 <body>
 
-  <div class="delivery-badge">Llevamos el Spa a la comodidad de tu hogar</div>
+  <div class="delivery-badge">Llevamos el Spa a la comodidad de tu hogar en Rancagua</div>
 
   <header>
     <img src="assets/logo.png" alt="Derma Belle Spa">
-    <h1>Relajación sin salir de casa</h1>
-    <p>Masoterapia y estética profesional en Rancagua</p>
+    <h1>Tu refugio personal, donde tú estés</h1>
+    <p>Masoterapia y estética de lujo a domicilio</p>
     <a href="#contacto" class="btn-main">Reservar mi sesión</a>
   </header>
 
-  <section>
+  <section id="servicios">
     <div class="section-title">
-      <h2>Nuestros Servicios</h2>
-      <p>Trasladamos todo el equipo necesario para tu bienestar</p>
+      <h2>Servicios a Domicilio</h2>
+      <p>Trasladamos una experiencia de bienestar completa a tu casa</p>
     </div>
     <div class="services-grid">
       <div class="service-card">
-        <h3>Masajes Pro</h3>
-        <p>Descontracturantes y relajantes con aceites esenciales premium.</p>
+        <h3>Masoterapia Pro</h3>
+        <p>Técnicas manuales para liberar tensión, estrés y dolores musculares.</p>
       </div>
       <div class="service-card">
-        <h3>Drenaje Linfático</h3>
-        <p>Tratamientos especializados para la recuperación y estética corporal.</p>
+        <h3>Drenaje y Estética</h3>
+        <p>Tratamientos reductivos y post-operatorios con enfoque profesional.</p>
       </div>
       <div class="service-card">
-        <h3>Faciales VIP</h3>
-        <p>Limpieza y nutrición profunda adaptada a tu tipo de piel.</p>
+        <h3>Rituales Faciales</h3>
+        <p>Limpieza profunda y nutrición celular sin moverte de tu habitación.</p>
       </div>
     </div>
   </section>
 
-  <section style="background: white; border-radius: 4px;">
+  <div class="testimonials-section">
     <div class="section-title">
-      <h2>Lo que dicen nuestras clientes</h2>
+      <h2>Experiencias Reales</h2>
     </div>
-    <div class="testimonials">
+    <div class="testimonials-grid">
       <div class="testi-item">
-        <p>"Increíble atención. Es un lujo poder recibir un masaje profesional en casa después de un día agotador."</p>
-        <strong>- María J.</strong>
+        <p>"Fue increíble. Trajeron todo lo necesario y el masaje descontracturante fue de otro nivel. Súper profesionales."</p>
+        <strong>- María Paz G.</strong>
       </div>
       <div class="testi-item">
-        <p>"Puntualidad y mucha higiene. Los productos que usan son de primera calidad. Totalmente recomendados."</p>
-        <strong>- Carola R.</strong>
+        <p>"Lo mejor para después de un día largo de oficina. La atención a domicilio es puntual y muy higiénica."</p>
+        <strong>- Daniela S.</strong>
       </div>
     </div>
-  </section>
+  </div>
 
   <footer id="contacto">
-    <h2>¿Agendamos?</h2>
-    <p>Atención exclusiva a domicilio en toda la zona de Rancagua.</p>
-    <p style="margin-top: 20px; color: var(--accent);">Lunes a Sábado | 09:00 - 20:00</p>
+    <h2>¿Agendamos tu momento?</h2>
+    <p>Atención exclusiva de Lunes a Sábado en Rancagua y alrededores.</p>
+    <p style="margin-top: 20px; color: var(--accent); letter-spacing: 1px;">📍 Rancagua, Chile</p>
+    <p>© 2024 Derma Belle Spa - Todos los derechos reservados</p>
   </footer>
 
-  <a href="https://wa.me." class="wa-link" target="_blank">
-    <svg width="30" height="30" fill="white" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.5-11.3 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.6 5.5-9.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+  <!-- BOTÓN DE WHATSAPP CON API OFICIAL -->
+  <a href="https://wa.me/56972189306?text=Hola%20%F0%9F%98%8A%0AQuisiera%20agendar%20una%20hora%20en%20*DermaBelle%20Spa*.%0AGracias!!"
+     class="wa-link" 
+     target="_blank" 
+     rel="noopener noreferrer"
+     title="Contáctanos por WhatsApp">
+    <svg width="32" height="32" fill="white" viewBox="0 0 448 512">
+      <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.5-11.3 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.6 5.5-9.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+    </svg>
   </a>
 
 </body>
 </html>
+
