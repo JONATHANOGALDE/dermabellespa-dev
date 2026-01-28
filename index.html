@@ -136,13 +136,13 @@
     /* DISEÑO DE CARTAS FLOTANTES */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 40px;
     }
 
     .service-card {
       background: var(--white);
-      padding: 60px 40px;
+      padding: 40px 30px;
       text-align: center;
       transition: all 0.6s ease;
       border: 1px solid #f0efed;
@@ -151,7 +151,7 @@
     .service-card:hover {
       background: var(--bg);
       border-color: var(--accent);
-      transform: translateY(-15px);
+      transform: translateY(-10px);
     }
 
     .service-card span {
@@ -165,25 +165,25 @@
 
     .service-card h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       color: var(--primary);
-      margin: 0 0 20px;
+      margin: 0 0 15px;
     }
 
-    /* SECCIÓN PRECIOS IMAGEN (NUEVO ESTILO) */
+    /* SECCIÓN PRECIOS IMAGEN */
     .price-image-container {
       text-align: center;
       padding: 20px;
       background: var(--white);
       box-shadow: var(--shadow);
-      max-width: 800px; /* Limita el ancho para que no se estire demasiado en pantallas grandes */
+      max-width: 800px;
       margin: auto;
     }
     .price-image {
-      max-width: 100%; /* Se ajusta al contenedor */
+      max-width: 100%;
       height: auto;
       display: block;
-      margin: auto; /* Centra la imagen dentro del contenedor */
+      margin: auto;
     }
 
 
@@ -271,18 +271,28 @@
     </div>
     <div class="services-grid">
       <div class="service-card">
-        <span>Cuerpo & Mente</span>
-        <h3>Masaje Relajación</h3>
+        <span>Cuerpo & Relajo</span>
+        <h3>Masaje de relajación</h3>
         <p>Alivia el estrés y la tensión diaria con aceites esenciales.</p>
       </div>
       <div class="service-card" style="border-top: 3px solid var(--accent);">
-        <span>Tratamiento Terapéutico</span>
-        <h3>Masaje Descontracturante</h3>
+        <span>Terapéutico</span>
+        <h3>Masaje descontracturante</h3>
         <p>Enfoque profundo en nudos y contracturas musculares persistentes.</p>
       </div>
       <div class="service-card">
-        <span>Estética Avanzada</span>
-        <h3>Limpieza Facial Profunda</h3>
+        <span>Estética Corporal</span>
+        <h3>Reductivo y reafirmante</h3>
+        <p>Tratamientos localizados para moldear la figura con técnicas manuales.</p>
+      </div>
+       <div class="service-card">
+        <span>Post-Tratamiento</span>
+        <h3>Drenajes linfáticos</h3>
+        <p>Ideales para recuperación, post-operatorios y retención de líquidos.</p>
+      </div>
+       <div class="service-card" style="border-top: 3px solid var(--accent);">
+        <span>Cuidado Facial</span>
+        <h3>Limpieza facial profunda</h3>
         <p>Renueva tu piel con microdermoabrasión y nutrición celular.</p>
       </div>
     </div>
@@ -295,7 +305,7 @@
     </div>
     <div class="price-image-container">
         <!-- ASEGÚRATE DE QUE TU IMAGEN SE LLAME 'precios.jpg' EN LA CARPETA 'assets' -->
-        <img src="assets/lista_precios_page.png" alt="Lista de Precios DermaBelle Spa" class="price-image">
+        <img src="assets/precios.jpg" alt="Lista de Precios Derma Belle Spa" class="price-image">
     </div>
   </section>
 
@@ -332,6 +342,7 @@
     </div>
     <p style="font-size: 0.8rem; opacity: 0.5;">© 2024 DERMA BELLE SPA. DESIGNED FOR WELLNESS.</p>
   </footer>
+
 
 
   <!-- BOTÓN DE WHATSAPP CON FORMATO WA.ME -->
