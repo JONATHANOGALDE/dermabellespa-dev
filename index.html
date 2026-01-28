@@ -84,6 +84,38 @@ a.button:hover {
   </style>
 </head>
 
+  <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+  <a href="https://wa.me/56912345678?text=Hola,%20quiero%20agendar%20una%20hora" 
+     target="_blank" 
+     class="whatsapp-float">
+    📲 WhatsApp
+  </a>
+
+  <style>
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50px;
+    padding: 15px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .whatsapp-float:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  }
+  </style>
+
 <body>
 
   <!-- HERO -->
