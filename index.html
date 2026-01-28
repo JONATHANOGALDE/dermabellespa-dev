@@ -2,10 +2,118 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Dev – Derma Belle Spa</title>
+  <title>Derma Belle Spa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f6f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #f2e9e4;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    header img {
+      max-width: 180px;
+      margin-bottom: 20px;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      color: #6d4c41;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    footer {
+      background-color: #6d4c41;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #6d4c41;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Entorno de pruebas</h1>
-  <p>Si ves esto, GitHub Pages funciona.</p>
+
+  <!-- HERO -->
+  <header>
+    <img src="assets/logo.png" alt="Derma Belle Spa">
+    <h1>Bienestar, estética y masoterapia</h1>
+    <p>Cuidamos tu cuerpo y tu piel con atención profesional y personalizada</p>
+    <a href="#contacto" class="button">Reserva tu hora</a>
+  </header>
+
+  <!-- QUIÉNES SOMOS -->
+  <section>
+    <h2>Sobre Derma Belle Spa</h2>
+    <p>
+      Somos un espacio dedicado al bienestar integral, combinando masoterapia,
+      estética corporal y cuidado facial en un ambiente cálido y profesional.
+    </p>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section>
+    <h2>Nuestros servicios</h2>
+
+    <div class="services">
+      <div class="card">Masaje relajante</div>
+      <div class="card">Masaje descontracturante</div>
+      <div class="card">Masaje reductivo</div>
+      <div class="card">Limpieza facial</div>
+    </div>
+  </section>
+
+  <!-- POR QUÉ ELEGIRNOS -->
+  <section>
+    <h2>¿Por qué elegirnos?</h2>
+    <p>
+      Atención personalizada, productos de calidad, técnicas profesionales
+      y un enfoque real en tu bienestar físico y emocional.
+    </p>
+  </section>
+
+  <!-- CONTACTO -->
+  <footer id="contacto">
+    <h2>Contacto</h2>
+    <p>Agenda tu hora o escríbenos para más información</p>
+    <p>📲 WhatsApp: +56 9 XXXX XXXX</p>
+    <p>📍 Chile</p>
+  </footer>
+
 </body>
 </html>
