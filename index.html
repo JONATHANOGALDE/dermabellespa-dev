@@ -5,35 +5,32 @@
   <title>Derma Belle Spa</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fuente moderna -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
   <style>
-    /* Reset y fuente */
+    /* GENERAL */
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
+      font-family: Arial, sans-serif;
       background-color: #f8f6f4;
       color: #333;
       line-height: 1.6;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
     h1, h2 {
       color: #6d4c41;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
-    /* HERO */
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    /* HEADER */
     header {
-      background: linear-gradient(135deg, #f2e9e4, #e9dcd1);
+      background-color: #f2e9e4;
       text-align: center;
-      padding: 80px 20px;
-      position: relative;
+      padding: 60px 20px;
     }
 
     header img {
@@ -43,89 +40,34 @@
       margin-bottom: 20px;
     }
 
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.1);
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-bottom: 25px;
-      color: #5a3d32;
-    }
-
     a.button {
       display: inline-block;
-      padding: 14px 30px;
-      background: linear-gradient(90deg, #6d4c41, #5a3d32);
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #6d4c41;
       color: white;
-      font-weight: 600;
-      border-radius: 30px;
+      text-decoration: none;
+      border-radius: 25px;
       transition: all 0.3s ease;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
     }
 
     a.button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.25);
-    }
-
-    /* SECCIONES */
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    section h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 30px;
-      position: relative;
-    }
-
-    section h2::after {
-      content: '';
-      width: 60px;
-      height: 4px;
-      background-color: #6d4c41;
-      display: block;
-      margin: 10px auto 0;
-      border-radius: 2px;
+      background-color: #5a3d32;
+      transform: translateY(-2px);
     }
 
     /* SERVICIOS */
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
+      gap: 20px;
     }
 
     .card {
       background: white;
-      padding: 30px 20px;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-      text-align: center;
-      font-weight: 500;
-      font-size: 1.1rem;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
-    }
-
-    /* POR QUÉ ELEGIRNOS */
-    section p {
-      text-align: center;
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto;
-      color: #5a3d32;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
 
     /* FOOTER */
@@ -133,101 +75,81 @@
       background-color: #6d4c41;
       color: white;
       text-align: center;
-      padding: 50px 20px;
+      padding: 40px 20px;
     }
 
-    footer h2 {
-      margin-bottom: 15px;
+    /* BOTÓN WHATSAPP FLOTANTE */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25D366; /* verde oficial WhatsApp */
+      color: white;
+      border-radius: 50px;
+      padding: 12px 18px;
+      font-size: 16px;
+      font-weight: bold;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+
+      z-index: 1000;
+      animation: pulse 2s infinite;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    footer p {
-      margin: 5px 0;
-      font-size: 1rem;
+    .whatsapp-float svg {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0; /* evita que el icono se reduzca */
     }
 
-    <!-- BOTÓN WHATSAPP FLOTANTE -->
-<a href="https://wa.me/56972189306?text=Hola%20%F0%9F%98%8A%0AQuisiera%20agendar%20una%20hora%20en%20*DermaBelle%20Spa*.%0AGracias!!" 
-   target="_blank" 
-   class="whatsapp-float">
-  <!-- SVG oficial recortado y centrado -->
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="32" height="32" fill="white">
-    <path d="M380.9 97.1C339-44 266.4 0 0 0 0 0-3.2 74.4 0 118.7c3.2 44.3 44.5 76 44.5 76s-2.7 36.3-6.7 69.7c-4.2 34 0 57 0 57s48.4 14.3 79.4 21c31 6.7 44.4-5.3 44.4-5.3s30.4 20.4 47.3 27.3c16.9 6.9 61.2 2.6 61.2 2.6s32.3 31 45.2 45.5c12.9 14.5 49.8 7.8 49.8 7.8s14.8-6.2 18.7-16.7c3.9-10.5 0-31 0-31s34.6-50 34.6-78.2c0-28.2-18.7-45-18.7-45z"/>
-  </svg>
-  <span>¡Contáctanos!</span>
-</a>
+    .whatsapp-float span {
+      display: inline-block;
+    }
 
-<style>
-/* BOTÓN WHATSAPP FLOTANTE */
-.whatsapp-float {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background-color: #25D366; /* verde WhatsApp */
-  color: white;
-  border-radius: 50px;
-  padding: 12px 18px;
-  font-size: 16px;
-  font-weight: bold;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+    .whatsapp-float:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.4);
+      animation: none;
+    }
 
-  display: flex;
-  align-items: center;
-  justify-content: center; /* centra el contenido perfectamente */
-  gap: 12px;
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
 
-  z-index: 1000;
-  animation: pulse 2s infinite;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      section { padding: 40px 10px; }
+      header { padding: 50px 10px; }
 
-.whatsapp-float svg {
-  width: 32px;   /* tamaño ideal del icono */
-  height: 32px;
-  flex-shrink: 0; /* evita que el icono se reduzca */
-}
+      .whatsapp-float {
+        padding: 12px 14px;
+        font-size: 14px;
+        bottom: 15px;
+        right: 15px;
+      }
 
-.whatsapp-float span {
-  display: inline-block;
-}
+      .whatsapp-float svg {
+        width: 28px;
+        height: 28px;
+      }
 
-.whatsapp-float:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.4);
-  animation: none;
-}
-
-/* ANIMACIÓN PULSE */
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.08); }
-  100% { transform: scale(1); }
-}
-
-/* RESPONSIVE MÓVIL */
-@media (max-width: 600px) {
-  .whatsapp-float {
-    padding: 12px 14px;
-    font-size: 14px;
-    bottom: 15px;
-    right: 15px;
-  }
-
-  .whatsapp-float svg {
-    width: 28px;
-    height: 28px;
-  }
-
-  .whatsapp-float span {
-    display: none; /* oculta texto en móviles */
-  }
-}
-</style>
-
+      .whatsapp-float span {
+        display: none; /* oculta texto en móviles */
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- HERO -->
+  <!-- HEADER -->
   <header>
     <img src="assets/logo.png" alt="Derma Belle Spa">
     <h1>Bienestar, Estética y Masoterapia</h1>
@@ -235,9 +157,9 @@
     <a href="#contacto" class="button">Reserva tu hora</a>
   </header>
 
-  <!-- QUIÉNES SOMOS -->
+  <!-- SOBRE NOSOTROS -->
   <section>
-    <h2>Sobre DermaBelle Spa</h2>
+    <h2>Sobre Derma Belle Spa</h2>
     <p>
       Somos un espacio dedicado al bienestar integral, combinando masoterapia,
       estética corporal y cuidado facial en un ambiente cálido y profesional.
@@ -264,7 +186,7 @@
     </p>
   </section>
 
-  <!-- CONTACTO -->
+  <!-- FOOTER / CONTACTO -->
   <footer id="contacto">
     <h2>Contacto</h2>
     <p>Agenda tu hora o escríbenos para más información</p>
@@ -275,8 +197,8 @@
   <a href="https://wa.me/56972189306?text=Hola%20%F0%9F%98%8A%0AQuisiera%20agendar%20una%20hora%20en%20*DermaBelle%20Spa*.%0AGracias!!" 
      target="_blank" 
      class="whatsapp-float">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white">
-      <path d="M18.497 4.409a10 10 0 0 1-10.36 16.828l-.223-.098l-4.759.849l-.11.011a1 1 0 0 1-.11 0l-.102-.013l-.108-.024l-.105-.037l-.099-.047l-.093-.058l-.014-.011l-.012-.007l-.086-.073l-.077-.08l-.067-.088l-.056-.094l-.034-.07l-.04-.108l-.028-.128l-.012-.102a1 1 0 0 1 0-.125l.012-.1l.024-.11l.045-.122l1.433-3.304l-.009-.014a10 10 0 0 1 1.549-12.454l.215-.203a10 10 0 0 1 13.226-.217m-8.997 3.09a1.5 1.5 0 0 0-1.5 1.5v1a6 6 0 0 0 6 6h1a1.5 1.5 0 0 0 0-3h-1l-.144.007a1.5 1.5 0 0 0-1.128.697l-.042.074l-.022-.007a4.01 4.01 0 0 1-2.435-2.435l-.008-.023l.075-.041a1.5 1.5 0 0 0 .704-1.272v-1a1.5 1.5 0 0 0-1.5-1.5z"/>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="32" height="32" fill="white">
+      <path d="M380.9 97.1C339-44 266.4 0 0 0 0 0-3.2 74.4 0 118.7c3.2 44.3 44.5 76 44.5 76s-2.7 36.3-6.7 69.7c-4.2 34 0 57 0 57s48.4 14.3 79.4 21c31 6.7 44.4-5.3 44.4-5.3s30.4 20.4 47.3 27.3c16.9 6.9 61.2 2.6 61.2 2.6s32.3 31 45.2 45.5c12.9 14.5 49.8 7.8 49.8 7.8s14.8-6.2 18.7-16.7c3.9-10.5 0-31 0-31s34.6-50 34.6-78.2c0-28.2-18.7-45-18.7-45z"/>
     </svg>
     <span>¡Contáctanos!</span>
   </a>
