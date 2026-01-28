@@ -2,254 +2,239 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Derma Belle Spa</title>
+  <title>Derma Belle Spa | Bienestar y Estética</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fuente moderna -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Tipografía: Playfair Display para elegancia y Poppins para lectura -->
+  <link href="https://fonts.googleapis.com" rel="stylesheet">
 
   <style>
-    /* Reset y fuente */
+    :root {
+      --primary: #6d4c41;
+      --secondary: #a68b80;
+      --accent: #d4a373;
+      --bg: #fdfaf8;
+      --white: #ffffff;
+      --text: #4a4a4a;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #f8f6f4;
-      color: #333;
-      line-height: 1.6;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      overflow-x: hidden;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    h1, h2 {
-      color: #6d4c41;
-      margin-bottom: 15px;
-    }
-
-    /* HERO */
-    header {
-      background: linear-gradient(135deg, #f2e9e4, #e9dcd1);
+    /* Navegación sutil */
+    nav {
+      padding: 20px;
       text-align: center;
-      padding: 80px 20px;
-      position: relative;
+      background: var(--white);
+      border-bottom: 1px solid #eee;
+    }
+
+    /* HERO SECTION */
+    header {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background: radial-gradient(circle at top, #fcf6f2 0%, var(--bg) 100%);
     }
 
     header img {
-      max-width: 450px;
+      max-width: 320px;
       width: 100%;
       height: auto;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+      filter: drop-shadow(0 5px 15px rgba(0,0,0,0.05));
     }
 
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      color: var(--primary);
+      margin: 0;
+      letter-spacing: -1px;
     }
 
     header p {
-      font-size: 1.2rem;
-      margin-bottom: 25px;
-      color: #5a3d32;
+      font-style: italic;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--secondary);
+      margin-top: 10px;
+      margin-bottom: 40px;
     }
 
-    a.button {
-      display: inline-block;
-      padding: 14px 30px;
-      background: linear-gradient(90deg, #6d4c41, #5a3d32);
-      color: white;
-      font-weight: 600;
-      border-radius: 30px;
-      transition: all 0.3s ease;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    /* Botón Pro */
+    .btn-main {
+      padding: 18px 45px;
+      background: var(--primary);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 2px; /* Estilo editorial */
+      transition: all 0.4s ease;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.85rem;
+      border: 1px solid var(--primary);
     }
 
-    a.button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+    .btn-main:hover {
+      background: transparent;
+      color: var(--primary);
+      box-shadow: 0 10px 20px rgba(109, 76, 65, 0.15);
     }
 
-    /* SECCIONES */
+    /* SECCIONES GEOMÉTRICAS */
     section {
-      padding: 60px 20px;
-      max-width: 900px;
+      padding: 100px 20px;
+      max-width: 1100px;
       margin: auto;
     }
 
-    section h2 {
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
       text-align: center;
-      font-size: 2rem;
-      margin-bottom: 30px;
+      color: var(--primary);
+      margin-bottom: 50px;
+    }
+
+    /* SERVICIOS CON DISEÑO FLOTANTE */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: var(--white);
+      padding: 40px 30px;
+      text-align: center;
+      border-radius: 0;
+      border: 1px solid #f0efed;
+      transition: all 0.5s ease;
       position: relative;
     }
 
-    section h2::after {
-      content: '';
-      width: 60px;
-      height: 4px;
-      background-color: #6d4c41;
-      display: block;
-      margin: 10px auto 0;
-      border-radius: 2px;
+    .service-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--accent);
     }
 
-    /* SERVICIOS */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary);
+      font-size: 1.3rem;
+      margin-bottom: 15px;
     }
 
-    .card {
-      background: white;
-      padding: 30px 20px;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-      text-align: center;
-      font-weight: 500;
-      font-size: 1.1rem;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
-    }
-
-    /* POR QUÉ ELEGIRNOS */
-    section p {
-      text-align: center;
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto;
-      color: #5a3d32;
+    /* SOBRE NOSOTROS */
+    .about-box {
+      background: var(--white);
+      padding: 60px;
+      box-shadow: 50px 50px 0px var(--secondary); /* Efecto de diseño moderno */
+      margin-right: 50px;
     }
 
     /* FOOTER */
     footer {
-      background-color: #6d4c41;
-      color: white;
+      background: #2d2421;
+      color: #d1c1bc;
+      padding: 80px 20px;
       text-align: center;
-      padding: 50px 20px;
     }
 
-    footer h2 {
-      margin-bottom: 15px;
-    }
+    footer h2 { color: var(--white); }
 
-    footer p {
-      margin: 5px 0;
-      font-size: 1rem;
-    }
-
-    /* BOTÓN WHATSAPP FLOTANTE */
-    .whatsapp-float {
+    /* WHATSAPP MODERNO */
+    .wa-link {
       position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background-color: #25D366;
+      bottom: 30px;
+      right: 30px;
+      background: #25D366;
       color: white;
-      border-radius: 50px;
-      padding: 12px 18px;
-      font-size: 16px;
-      font-weight: bold;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
-      gap: 10px;
-      z-index: 1000;
-      animation: pulse 2s infinite;
-      transition: transform 0.2s, box-shadow 0.2s;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+      z-index: 9999;
+      transition: 0.3s;
     }
 
-    .whatsapp-float:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.4);
-      animation: none;
-    }
+    .wa-link:hover { transform: scale(1.1) rotate(10deg); }
 
-    .whatsapp-float svg {
-      width: 24px;
-      height: 24px;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
-    }
-
-    @media (max-width: 600px) {
-      section { padding: 40px 10px; }
-      header { padding: 50px 10px; }
-      .whatsapp-float {
-        padding: 12px 14px;
-        font-size: 14px;
-        bottom: 15px;
-        right: 15px;
-      }
-      .whatsapp-float svg { width: 28px; height: 28px; }
-      .whatsapp-float span { display: none; }
+    @media (max-width: 768px) {
+      h1 { font-size: 2.2rem; }
+      .about-box { padding: 30px; box-shadow: 15px 15px 0px var(--secondary); margin-right: 15px; }
+      section { padding: 60px 20px; }
     }
   </style>
 </head>
-
 <body>
 
-  <!-- HERO -->
+  <nav>
+    <small style="letter-spacing: 3px; color: var(--secondary);">EXPERIENCIA PREMIUM</small>
+  </nav>
+
   <header>
     <img src="assets/logo.png" alt="Derma Belle Spa">
-    <h1>Bienestar, Estética y Masoterapia</h1>
-    <p>Cuidamos tu cuerpo y tu piel con atención profesional y personalizada</p>
-    <a href="#contacto" class="button">Reserva tu hora</a>
+    <h1>El arte de cuidar tu piel</h1>
+    <p>Masoterapia y Estética Integral en Rancagua</p>
+    <a href="#contacto" class="btn-main">Agendar Experiencia</a>
   </header>
 
-  <!-- QUIÉNES SOMOS -->
-  <section>
-    <h2>Sobre DermaBelle Spa</h2>
-    <p>
-      Somos un espacio dedicado al bienestar integral, combinando masoterapia,
-      estética corporal y cuidado facial en un ambiente cálido y profesional.
-    </p>
-  </section>
-
-  <!-- SERVICIOS -->
-  <section>
-    <h2>Nuestros servicios</h2>
-    <div class="services">
-      <div class="card">Masaje relajante</div>
-      <div class="card">Masaje descontracturante</div>
-      <div class="card">Masaje reductivo</div>
-      <div class="card">Limpieza facial</div>
+  <section id="servicios">
+    <h2>Tratamientos Exclusivos</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Masoterapia</h3>
+        <p>Relajantes y descontracturantes diseñados para renovar tu energía corporal.</p>
+      </div>
+      <div class="service-card">
+        <h3>Estética Corporal</h3>
+        <p>Tratamientos reductivos con tecnología de vanguardia y resultados visibles.</p>
+      </div>
+      <div class="service-card">
+        <h3>Cuidado Facial</h3>
+        <p>Limpiezas profundas que devuelven la luminosidad natural a tu rostro.</p>
+      </div>
     </div>
   </section>
 
-  <!-- POR QUÉ ELEGIRNOS -->
-  <section>
-    <h2>¿Por qué elegirnos?</h2>
-    <p>
-      Atención personalizada, productos de calidad, técnicas profesionales
-      y un enfoque real en tu bienestar físico y emocional.
-    </p>
+  <section style="background: #f2e9e4;">
+    <div class="about-box">
+      <h2>Nuestra Filosofía</h2>
+      <p style="text-align: center; max-width: 600px; margin: auto;">
+        En <strong>DermaBelle Spa</strong>, no solo realizamos tratamientos; creamos un refugio de paz. 
+        Combinamos técnicas profesionales con un ambiente diseñado para desconectar del mundo exterior.
+      </p>
+    </div>
   </section>
 
-  <!-- CONTACTO -->
   <footer id="contacto">
-    <h2>Contacto</h2>
-    <p>Agenda tu hora o escríbenos para más información</p>
-    <p>📍 Rancagua, Chile</p>
+    <h2>Contáctanos</h2>
+    <p>Te esperamos en el corazón de Rancagua para una sesión de renovación total.</p>
+    <p style="margin-top: 30px; color: var(--accent);">📍 Rancagua, Chile</p>
+    <p>Horario: Lunes a Sábado - Previa Cita</p>
   </footer>
 
-  <!-- BOTÓN FLOTANTE DE WHATSAPP (CORREGIDO) -->
-<a href="https://wa.me/56972189306?text=Hola%20%F0%9F%98%8A%0AQuisiera%20agendar%20una%20hora%20en%20*DermaBelle%20Spa*.%0AGracias!!" 
-   target="_blank" 
-   class="whatsapp-float">
-  <!-- Nuevo SVG con path verificado -->
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="white">
-    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.5-11.3 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.6 5.5-9.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-  </svg>
-  <span>¡Contáctanos!</span>
-</a>
+  <a href="https://wa.me." class="wa-link" target="_blank">
+    <svg width="30" height="30" fill="white" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.5-11.3 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.6 5.5-9.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+  </a>
+
+</body>
+</html>
